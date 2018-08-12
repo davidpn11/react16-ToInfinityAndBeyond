@@ -15,15 +15,12 @@ import {
   Appear,
   Image,
   Layout,
-  Fit,
-  Fill
+  CodePane
 } from "spectacle";
 import CodeSlide from "spectacle-code-slide";
-
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 import profile from "../assets/profile.jpg";
-
 // Require CSS
 require("normalize.css");
 
@@ -32,7 +29,8 @@ const theme = createTheme(
     primary: "white",
     secondary: "#1F2022",
     tertiary: "#03A9FC",
-    quarternary: "#CECECE"
+    quarternary: "#CECECE",
+    grayBg: "#37474F"
   },
   {
     primary: "Montserrat",
@@ -48,6 +46,12 @@ export default class Presentation extends React.Component {
         transitionDuration={500}
         theme={theme}
       >
+        <Slide transition={["zoom"]} bgColor="primary">
+          <CodePane
+            lang="jsx"
+            source={require("raw-loader!../assets/code/code.example")}
+          />
+        </Slide>
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Spectacle Boilerplate
@@ -134,20 +138,19 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
+          <Heading size={6} textColor="primary" caps>
+            Introdução à react
+          </Heading>
         </Slide>
         <CodeSlide
           bgColor="tertiary"
           transition={[]}
           lang="jsx"
-          code={require("raw-loader!./code")}
+          code={require("raw-loader!../assets/code/code.example")}
           ranges={[
-            { loc: [0, 10], title: "Walking through some code" },
-            { loc: [2, 3], title: "The Beginning" },
-            { loc: [4, 5], note: "Heres a note!" }
+            { loc: [0, 10], title: "Component React" },
+            { loc: [2, 3], title: "Utiliza ES6 classes" },
+            { loc: [3, 4], note: "Precisa de pelo menos um método render" }
           ]}
         />
       </Deck>
