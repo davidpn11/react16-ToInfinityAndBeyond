@@ -35,8 +35,8 @@ const images = {
   // spectacleLogo: require('../assets/formidable-logo.svg'),
   twitterLogo: require("../assets/twitter-logo.svg"),
   // jestLogo: require('../assets/jest.svg'),
-  githubLogo: require("../assets/github.svg")
-  // camera: require('../assets/camera.svg'),
+  githubLogo: require("../assets/github.svg"),
+  blinking: require("../assets/blinking.gif")
 };
 
 const theme = createTheme(
@@ -80,37 +80,7 @@ export default class Presentation extends React.Component {
             Ao infinito e além
           </Text>
           <Image width="20%" src={images.infinty} />
-          {/* <Layout style={{ marginTop: 100, justifyContent: "space-between" }}>
-            <Fill>
-              <Text textColor="accent" style={{ textAlign: "left" }}>
-                Sibelius Seraphini
-              </Text>
-            </Fill>
-            <Fill>
-              <Link href="https://github.com/sibelius" target="_blank">
-                <Text textColor="accent" style={{ textAlign: "center" }}>
-                  <Image
-                    src={images.githubLogo}
-                    style={{ height: 25, margin: "0 0 10 0" }}
-                  />
-                  sibelius
-                </Text>
-              </Link>
-            </Fill>
-            <Fill>
-              <Link href="https://twitter.com/sseraphini" target="_blank">
-                <Text textColor="accent" style={{ textAlign: "right" }}>
-                  <Image
-                    src={images.twitterLogo}
-                    style={{ height: 25, margin: "0 0 10 0" }}
-                  />
-                  @sseraphini
-                </Text>
-              </Link>
-            </Fill>
-          </Layout> */}
         </Slide>
-
         {/* Slide pessoal */}
         <Slide transition={["zoom"]} bgColor="primary">
           <Layout>
@@ -137,7 +107,7 @@ export default class Presentation extends React.Component {
               </List>
             </Fill>
           </Layout>
-          <Link href="https://github.com/sibelius" target="_blank">
+          <Link href="https://github.com/davidpn11" target="_blank">
             <Text textColor="accent" style={{ textAlign: "center" }}>
               <Image
                 src={images.githubLogo}
@@ -147,94 +117,42 @@ export default class Presentation extends React.Component {
             </Text>
           </Link>
         </Slide>
-        <Slide transition={["zoom"]} bgColor="grayBg">
-          <CodePane
+        <Slide transition={["fade"]} bgColor="grayBg">
+          <Heading size={1} fit caps lineHeight={1} textColor="white">
+            O que é React?
+          </Heading>
+        </Slide>
+        {/* BUZZZ BLINKING */}
+        <Slide bgColor="dark">
+          <Image src={images.blinking} />
+        </Slide>
+
+        {/* <CodePane
             lang="jsx"
             source={require("raw-loader!../assets/code/code.example")}
-          />
-        </Slide>
+          /> */}
+        {/* INTRO REACT */}
         <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
-          </Heading>
-          <Layout>
-            <Image
-              height={300}
-              width={300}
-              src={profile}
-              fit
-              size={1}
-              style={{ borderRadius: "100%" }}
-            />
-            <List>
-              <Appear>
-                <ListItem>Who am I?</ListItem>
-              </Appear>
-              <Appear>
-                <ListItem>React - DIY</ListItem>
-              </Appear>
-              <Appear>
-                <ListItem>React - Boilerplates</ListItem>
-              </Appear>
-              <Appear>
-                <ListItem>React - THE boilerplate</ListItem>
-              </Appear>
-              <Appear>
-                <ListItem>Next.js</ListItem>
-              </Appear>
-            </List>
-          </Layout>
-        </Slide>
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
-          </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            Quero ver se atualiza{" "}
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>
-            Typography
-          </Heading>
-          <Heading size={1} textColor="secondary">
-            Teste de Heading
-          </Heading>
-          <Heading size={2} textColor="secondary">
-            Heading 2
-          </Heading>
-          <Heading size={3} textColor="secondary">
-            Heading 3
-          </Heading>
-          <Heading size={4} textColor="secondary">
-            Heading 4
-          </Heading>
-          <Heading size={5} textColor="secondary">
-            Heading 5
-          </Heading>
-          <Text size={6} textColor="secondary">
-            Standard text
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Standard List
+          <Heading size={1} caps lineHeight={1}>
+            React é:
           </Heading>
           <List>
             <Appear>
-              <ListItem>Who am I?</ListItem>
+              <ListItem>Framework JS</ListItem>
             </Appear>
             <Appear>
-              <ListItem>React - DIY</ListItem>
+              <ListItem>Baseado em componentes</ListItem>
             </Appear>
             <Appear>
-              <ListItem>React - Boilerplates</ListItem>
+              <ListItem>Ciclo de vida bem detalhado</ListItem>
             </Appear>
             <Appear>
-              <ListItem>React - THE boilerplate</ListItem>
+              <ListItem>Transferência de dados unidirecional (Flux)</ListItem>
             </Appear>
             <Appear>
-              <ListItem>Next.js</ListItem>
+              <ListItem>
+                State (dados próprios) e Props(dados recebidos)
+              </ListItem>
             </Appear>
           </List>
         </Slide>
@@ -249,9 +167,25 @@ export default class Presentation extends React.Component {
           lang="jsx"
           code={require("raw-loader!../assets/code/code.example")}
           ranges={[
-            { loc: [0, 10], title: "Component React" },
-            { loc: [2, 3], title: "Utiliza ES6 classes" },
-            { loc: [3, 4], note: "Precisa de pelo menos um método render" }
+            { loc: [0, 50], title: "Primeiro Componente" },
+            { loc: [0, 2], note: "Imports de react e react-dom" },
+            { loc: [3, 4], note: "Utiliza ES6 classes" },
+            { loc: [6, 10], note: "Iniciando o estado do componente" },
+            { loc: [10, 11], note: "Fazendo o bind de uma função" },
+            { loc: [24, 36], title: "método render() " },
+            { loc: [24, 36], note: "" },
+            { loc: [26, 35], note: "JSX" },
+            { loc: [25, 26], note: "Destruct no estado" },
+            { loc: [28, 29], note: "PROPS" },
+            { loc: [29, 32], note: "onClick" },
+            { loc: [19, 23], note: "função upVote" },
+            { loc: [39, 40], note: "render do App" },
+            { loc: [32, 33], note: "Uso do count" },
+            { loc: [33, 34], note: "Usando List" },
+            { loc: [13, 18], note: "componentDidMount" },
+            { loc: [2, 3], note: "importando List" },
+            { loc: [33, 34], note: "Usando List" },
+            { loc: [0, 50], title: "É isso" }
           ]}
         />
       </Deck>
