@@ -14,8 +14,11 @@ import {
   Text,
   Appear,
   Image,
-  Layout,
-  CodePane
+  CodePane,
+  Link,
+  Fill,
+  Fit,
+  Layout
 } from "spectacle";
 import CodeSlide from "spectacle-code-slide";
 // Import theme
@@ -24,13 +27,27 @@ import profile from "../assets/profile.jpg";
 // Require CSS
 require("normalize.css");
 
+const images = {
+  reactLogo: require("../assets/react-logo.png"),
+  infinty: require("../assets/infinity.gif"),
+
+  // routerLogo: require('../assets/react-router-logo.png'),
+  // spectacleLogo: require('../assets/formidable-logo.svg'),
+  twitterLogo: require("../assets/twitter-logo.svg"),
+  // jestLogo: require('../assets/jest.svg'),
+  githubLogo: require("../assets/github.svg")
+  // camera: require('../assets/camera.svg'),
+};
+
 const theme = createTheme(
   {
     primary: "white",
     secondary: "#1F2022",
     tertiary: "#03A9FC",
     quarternary: "#CECECE",
-    grayBg: "#37474F"
+    grayBg: "#37474F",
+    whitesmoke: "whitesmoke",
+    dark: "#111"
   },
   {
     primary: "Montserrat",
@@ -46,7 +63,91 @@ export default class Presentation extends React.Component {
         transitionDuration={500}
         theme={theme}
       >
+        {/* PRESENTATION SLIDE */}
+        <Slide bgColor="dark">
+          <Image width="20%" src={images.reactLogo} />
+          <Heading
+            size={1}
+            fit
+            caps
+            lineHeight={1}
+            color="whitesmoke"
+            textFont="primary"
+          >
+            React 16
+          </Heading>
+          <Text size={2} textColor="gray">
+            Ao infinito e além
+          </Text>
+          <Image width="20%" src={images.infinty} />
+          {/* <Layout style={{ marginTop: 100, justifyContent: "space-between" }}>
+            <Fill>
+              <Text textColor="accent" style={{ textAlign: "left" }}>
+                Sibelius Seraphini
+              </Text>
+            </Fill>
+            <Fill>
+              <Link href="https://github.com/sibelius" target="_blank">
+                <Text textColor="accent" style={{ textAlign: "center" }}>
+                  <Image
+                    src={images.githubLogo}
+                    style={{ height: 25, margin: "0 0 10 0" }}
+                  />
+                  sibelius
+                </Text>
+              </Link>
+            </Fill>
+            <Fill>
+              <Link href="https://twitter.com/sseraphini" target="_blank">
+                <Text textColor="accent" style={{ textAlign: "right" }}>
+                  <Image
+                    src={images.twitterLogo}
+                    style={{ height: 25, margin: "0 0 10 0" }}
+                  />
+                  @sseraphini
+                </Text>
+              </Link>
+            </Fill>
+          </Layout> */}
+        </Slide>
+
+        {/* Slide pessoal */}
         <Slide transition={["zoom"]} bgColor="primary">
+          <Layout>
+            <Fill>
+              <Image
+                height={300}
+                width={300}
+                src={profile}
+                fit
+                size={1}
+                style={{ borderRadius: "100%" }}
+              />
+            </Fill>
+            <Fill>
+              <Heading size={1} fit lineHeight={1} textColor="tertiary">
+                $ whoami
+              </Heading>
+              <Heading size={2} fit caps lineHeight={1} textColor="secondary">
+                David Nascimento
+              </Heading>
+              <List style={{ fontSize: "10px" }}>
+                <ListItem>Take - BLiP</ListItem>
+                <ListItem>Front End</ListItem>
+              </List>
+            </Fill>
+          </Layout>
+          <Link href="https://github.com/sibelius" target="_blank">
+            <Text textColor="accent" style={{ textAlign: "center" }}>
+              <Image
+                src={images.githubLogo}
+                style={{ height: 50, margin: "0 0 10 0" }}
+              />
+              @davidpn11
+            </Text>
+          </Link>
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="grayBg">
           <CodePane
             lang="jsx"
             source={require("raw-loader!../assets/code/code.example")}
