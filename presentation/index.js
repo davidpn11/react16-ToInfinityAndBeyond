@@ -36,7 +36,8 @@ const images = {
   twitterLogo: require("../assets/twitter-logo.svg"),
   // jestLogo: require('../assets/jest.svg'),
   githubLogo: require("../assets/github.svg"),
-  blinking: require("../assets/blinking.gif")
+  blinking: require("../assets/blinking.gif"),
+  oh: require("../assets/oh.gif")
 };
 
 const theme = createTheme(
@@ -129,7 +130,7 @@ export default class Presentation extends React.Component {
 
         {/* <CodePane
             lang="jsx"
-            source={require("raw-loader!../assets/code/code.example")}
+            source={require("raw-loader!../assets/code/firstReact.example")}
           /> */}
         {/* INTRO REACT */}
         <Slide transition={["zoom"]} bgColor="primary">
@@ -158,14 +159,15 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading size={6} textColor="primary" caps>
-            Introdução à react
+            Dissecando um component react
           </Heading>
         </Slide>
         <CodeSlide
+          theme={theme}
           bgColor="tertiary"
           transition={[]}
           lang="jsx"
-          code={require("raw-loader!../assets/code/code.example")}
+          code={require("raw-loader!../assets/code/firstReact.example")}
           ranges={[
             { loc: [0, 50], title: "Primeiro Componente" },
             { loc: [0, 2], note: "Imports de react e react-dom" },
@@ -188,6 +190,27 @@ export default class Presentation extends React.Component {
             { loc: [0, 50], title: "É isso" }
           ]}
         />
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={1} textColor="primary" caps>
+            !!! REACT 16+ !!!
+          </Heading>
+          <Image width="50%" src={images.oh} />
+        </Slide>
+        <Slide transition={["spin"]} bgColor="whitesmoke">
+          <Heading size={3} textColor="dark" caps>
+            Tamanho menor
+          </Heading>
+          <Image width="50%" src={images.oh} />
+        </Slide>
+        <Slide transition={["slide"]} bgColor="dark">
+          <Heading size={5} textColor="primary" caps>
+            Método <b>render</b> mais poderoso
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require("raw-loader!../assets/code/firstReact.example")}
+          />
+        </Slide>
       </Deck>
     );
   }
