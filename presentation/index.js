@@ -37,7 +37,8 @@ const images = {
   // jestLogo: require('../assets/jest.svg'),
   githubLogo: require("../assets/github.svg"),
   blinking: require("../assets/blinking.gif"),
-  oh: require("../assets/oh.gif")
+  oh: require("../assets/oh.gif"),
+  reactSize: require("../assets/reactSize.png")
 };
 
 const theme = createTheme(
@@ -48,7 +49,8 @@ const theme = createTheme(
     quarternary: "#CECECE",
     grayBg: "#37474F",
     whitesmoke: "whitesmoke",
-    dark: "#111"
+    dark: "#111",
+    codeBg: "#2a2734"
   },
   {
     primary: "Montserrat",
@@ -200,17 +202,104 @@ export default class Presentation extends React.Component {
           <Heading size={3} textColor="dark" caps>
             Tamanho menor
           </Heading>
-          <Image width="50%" src={images.oh} />
+          <Image width="80%" src={images.reactSize} />
         </Slide>
-        <Slide transition={["slide"]} bgColor="dark">
+        <Slide transition={["slide"]} bgColor="codeBg">
           <Heading size={5} textColor="primary" caps>
             Método <b>render</b> mais poderoso
           </Heading>
-          <CodePane
-            lang="jsx"
-            source={require("raw-loader!../assets/code/firstReact.example")}
-          />
+          <Layout>
+            <Fill>
+              <Text textColor="primary">Arrays</Text>
+              <CodePane
+                style={{ fontSize: "18px" }}
+                lang="jsx"
+                source={require("raw-loader!../assets/code/renderArray.example")}
+              />
+            </Fill>
+            <Appear>
+              <Fill>
+                <Text textColor="primary">String</Text>
+                <CodePane
+                  style={{ fontSize: "18px" }}
+                  lang="jsx"
+                  source={require("raw-loader!../assets/code/renderString.example")}
+                />
+              </Fill>
+            </Appear>
+          </Layout>
+          <Layout>
+            <Appear>
+              <Fill>
+                <Text textColor="primary">Fragment</Text>
+                <CodePane
+                  style={{ fontSize: "18px" }}
+                  lang="jsx"
+                  source={require("raw-loader!../assets/code/renderFragment.example")}
+                />
+              </Fill>
+            </Appear>
+          </Layout>
         </Slide>
+        <Slide transition={["spin"]} bgColor="tertiary">
+          <Heading size={4} textColor="dark" caps>
+            Melhor tratamento de erros
+            <Appear>
+              <Text textColor="red">ANTES</Text>
+            </Appear>
+          </Heading>
+          <Appear>
+            <Text textColor="dark">
+              Se um componente lança um erro de execução, remove toda a sub
+              árvore do componente
+            </Text>
+          </Appear>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary">
+          <Heading size={4} textColor="dark" caps>
+            Melhor tratamento de erros
+            <Text textColor="red">DEPOIS</Text>
+          </Heading>
+
+          <List>
+            <Appear>
+              <ListItem>Introduzindo Error boundaries</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>componentDidCatch(error, info)</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Mostra uma outra UI quando da error</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Como usar?</ListItem>
+            </Appear>
+          </List>
+          <Appear>
+            <CodePane
+              style={{ fontSize: "18px" }}
+              lang="jsx"
+              source={require("raw-loader!../assets/code/usingError.example")}
+            />
+          </Appear>
+        </Slide>
+        <CodeSlide
+          theme={theme}
+          bgColor="tertiary"
+          transition={[]}
+          lang="jsx"
+          code={require("raw-loader!../assets/code/errorBoundary.example")}
+          ranges={[
+            { loc: [0, 50], title: "Tratando Errors" },
+            { loc: [3, 4], note: "Estado de erro para false " },
+            { loc: [6, 10], note: "componentDidcatch(error, info)" },
+            { loc: [12, 15], note: "Fallback UI" },
+            {
+              loc: [15, 16],
+              note: "Se nada tiver errado, retorna a sub árvore"
+            }
+          ]}
+        />
       </Deck>
     );
   }

@@ -1,0 +1,9 @@
+render() {
+    return (
+        <React.Fragment>
+            <li key="A">Primeiro</li>
+            <li key="B">Segundo</li>
+            <li key="C">Terceiro</li>
+        </React.Fragment>
+    )
+}
