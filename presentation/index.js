@@ -38,6 +38,14 @@ const images = {
   portalDiagram: require("../assets/portal-diagram.svg")
 };
 
+const codesandboxStyle = {
+  width: "100%",
+  height: "70vh",
+  border: 0,
+  borderRadius: "4px",
+  overflow: "hidden"
+};
+
 const theme = createTheme(
   {
     primary: "white",
@@ -331,13 +339,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <iframe
             src="https://codesandbox.io/embed/13oq4pxzlq"
-            style={{
-              width: "100%",
-              height: "70vh",
-              border: 0,
-              borderRadius: "4px",
-              overflow: "hidden"
-            }}
+            style={codesandboxStyle}
             sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
           />
         </Slide>
@@ -378,6 +380,70 @@ export default class Presentation extends React.Component {
             }
           ]}
         />
+        <Slide transition={["zoom"]} bgColor="tertiary" textColor="primary">
+          <Heading size={4} textColor="primary">
+            createRef/ForwardRef
+          </Heading>
+          <List>
+            <Appear>
+              <ListItem>
+                React tenta abstrair quase todas as operações feitas no DOM
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>O dev faz o resto</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                A API antiga tinha falhas -
+                <Link
+                  href="https://github.com/facebook/react/issues/1373"
+                  target="blank"
+                >
+                  Veja aqui
+                </Link>
+              </ListItem>
+            </Appear>
+            {/* <Appear>
+              <ListItem>Como usar?</ListItem>
+            </Appear> */}
+          </List>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="codeBg">
+          <Heading size={4} textColor="primary">
+            createRef
+          </Heading>
+          <CodePane
+            style={{ fontSize: "18px" }}
+            lang="jsx"
+            source={require("raw-loader!../assets/code/createRef.example")}
+          />
+        </Slide>
+        <Slide transition={["spin"]} bgColor="primary" textColor="dark">
+          <Heading size={4} textColor="tertiary">
+            forwardRef
+          </Heading>
+          <List>
+            <Appear>
+              <ListItem>
+                Possibilita acessar um elemento a partir de outro componente
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Ex: foco, seleção, animações, etc.</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Diferente de props</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["spin"]} bgColor="tertiary" textColor="dark">
+          <iframe
+            src="https://codesandbox.io/embed/xp8om4l17o"
+            style={codesandboxStyle}
+            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+          />
+        </Slide>
       </Deck>
     );
   }
