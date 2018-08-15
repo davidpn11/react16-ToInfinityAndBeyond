@@ -1,0 +1,22 @@
+import React, { Component } from "react";
+import Portal from "./Portal";
+
+class Modal extends Component {
+  render() {
+    const { close, children } = this.props;
+    return (
+      <Portal>
+        <div className="overlay" />
+        <div className="modal">
+          <span className="close"
+            onClick={close}>
+            X
+          </span>
+          {children}
+        </div>
+      </Portal>
+    );
+  }
+}
+
+export default Modal;

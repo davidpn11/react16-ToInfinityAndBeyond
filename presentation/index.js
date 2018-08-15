@@ -328,6 +328,56 @@ export default class Presentation extends React.Component {
             </ListItem>
           </List>
         </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <iframe
+            src="https://codesandbox.io/embed/13oq4pxzlq"
+            style={{
+              width: "100%",
+              height: "70vh",
+              border: 0,
+              borderRadius: "4px",
+              overflow: "hidden"
+            }}
+            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+          />
+        </Slide>
+        <CodeSlide
+          theme={theme}
+          bgColor="codeSlideBg"
+          transition={[]}
+          lang="jsx"
+          code={require("raw-loader!../assets/code/portal.example")}
+          ranges={[
+            { loc: [0, 50], title: "Componente Portal" },
+            { loc: [2, 4], note: "Pega o elemento" },
+            { loc: [8, 9], note: "Cria um elemento wrapper" },
+            { loc: [11, 14], note: "Anexa o elemento criado" },
+            { loc: [15, 18], note: "Remove o elemento criado" },
+            {
+              loc: [20, 24],
+              note: "Renderiza os filhos do componente dentro do el"
+            },
+            {
+              loc: [20, 24],
+              note: "Lembrando que o el destá dentro do modalRoot"
+            }
+          ]}
+        />
+        <CodeSlide
+          theme={theme}
+          bgColor="codeSlideBg"
+          transition={[]}
+          lang="jsx"
+          code={require("raw-loader!../assets/code/modal.example")}
+          ranges={[
+            { loc: [0, 50], title: "Componente Modal" },
+            {
+              loc: [6, 18],
+              note:
+                "O que está englobado pela tag portal, será renderizado no modalRoot"
+            }
+          ]}
+        />
       </Deck>
     );
   }
