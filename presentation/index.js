@@ -26,7 +26,7 @@ import createTheme from "spectacle/lib/themes/default";
 import profile from "../assets/profile.jpg";
 // Require CSS
 require("normalize.css");
-
+import "./codeSlide.css";
 const images = {
   reactLogo: require("../assets/react-logo.png"),
   infinty: require("../assets/infinity.gif"),
@@ -57,7 +57,7 @@ const theme = createTheme(
     secondary: "Helvetica"
   }
 );
-
+const code = require("../assets/code/code");
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -166,10 +166,11 @@ export default class Presentation extends React.Component {
         </Slide>
         <CodeSlide
           theme={theme}
-          bgColor="tertiary"
+          bgColor="codeBg"
           transition={[]}
-          lang="jsx"
+          lang="js"
           code={require("raw-loader!../assets/code/firstReact.example")}
+          // code={code}
           ranges={[
             { loc: [0, 50], title: "Primeiro Componente" },
             { loc: [0, 2], note: "Imports de react e react-dom" },

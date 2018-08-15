@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+module.exports = `import React, { Component } from "react";
 import { render } from "react-dom";
 import List from "./list";
 class App extends Component {
@@ -34,4 +34,4 @@ class App extends Component {
   }
 }
 
-render(<App title="Hello World" />, document.getElementById("root"));
+render(<App title="Hello World" />, document.getElementById("root"));`;
