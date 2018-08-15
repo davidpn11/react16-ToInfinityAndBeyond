@@ -30,15 +30,12 @@ import "./codeSlide.css";
 const images = {
   reactLogo: require("../assets/react-logo.png"),
   infinty: require("../assets/infinity.gif"),
-
-  // routerLogo: require('../assets/react-router-logo.png'),
-  // spectacleLogo: require('../assets/formidable-logo.svg'),
   twitterLogo: require("../assets/twitter-logo.svg"),
-  // jestLogo: require('../assets/jest.svg'),
   githubLogo: require("../assets/github.svg"),
   blinking: require("../assets/blinking.gif"),
   oh: require("../assets/oh.gif"),
-  reactSize: require("../assets/reactSize.png")
+  reactSize: require("../assets/reactSize.png"),
+  portalDiagram: require("../assets/portal-diagram.svg")
 };
 
 const theme = createTheme(
@@ -194,18 +191,21 @@ export default class Presentation extends React.Component {
             { loc: [0, 50], title: "É isso" }
           ]}
         />
+        {/* React 16 */}
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading size={1} textColor="primary" caps>
             !!! REACT 16+ !!!
           </Heading>
           <Image width="50%" src={images.oh} />
         </Slide>
+        {/* Tamanho menor */}
         <Slide transition={["spin"]} bgColor="whitesmoke">
           <Heading size={3} textColor="dark" caps>
             Tamanho menor
           </Heading>
           <Image width="80%" src={images.reactSize} />
         </Slide>
+        {/* Rederiza outras coisas */}
         <Slide transition={["slide"]} bgColor="codeBg">
           <Heading size={5} textColor="primary" caps>
             Método <b>render</b> mais poderoso
@@ -243,6 +243,7 @@ export default class Presentation extends React.Component {
             </Appear>
           </Layout>
         </Slide>
+        {/* Tratamento de error */}
         <Slide transition={["spin"]} bgColor="tertiary">
           <Heading size={4} textColor="dark" caps>
             Melhor tratamento de erros
@@ -285,6 +286,7 @@ export default class Presentation extends React.Component {
             />
           </Appear>
         </Slide>
+        {/* Code de error handling */}
         <CodeSlide
           theme={theme}
           bgColor="codeSlideBg"
@@ -294,7 +296,7 @@ export default class Presentation extends React.Component {
           ranges={[
             { loc: [0, 50], title: "Tratando Errors" },
             { loc: [3, 4], note: "Estado de erro para false " },
-            { loc: [6, 10], note: "componentDidcatch(error, info)" },
+            { loc: [6, 10], note: "componentDidCatch(error, info)" },
             { loc: [12, 15], note: "Fallback UI" },
             {
               loc: [15, 16],
@@ -302,6 +304,30 @@ export default class Presentation extends React.Component {
             }
           ]}
         />
+        {/* Portals */}
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={2} textColor="dark" caps>
+            Portals
+          </Heading>
+          <Heading size={5} textColor="tertiary" caps>
+            Permite renderizar elementos DOM fora da sua sub árvore
+          </Heading>
+          <Image width="40%" src={images.portalDiagram} />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={5} textColor="primary" caps>
+            Para que serve?
+          </Heading>
+          <List>
+            <ListItem>Modais</ListItem>
+            <ListItem>Tooltips</ListItem>
+            <ListItem>Caixas de dialogos</ListItem>
+            <ListItem>
+              Qualquer coisa que precisa ficar por cima de um <i>overflow</i>
+            </ListItem>
+          </List>
+        </Slide>
       </Deck>
     );
   }
