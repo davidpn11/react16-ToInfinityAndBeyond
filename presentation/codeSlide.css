@@ -2,7 +2,7 @@ code {
   color: white;
 }
 .token.keyword {
-  color: #cc99cd;
+  color: #feb2ff;
 }
 .token.string {
   color: #7ec699;
@@ -11,7 +11,7 @@ code {
   color: #999;
 }
 .token.punctuation {
-  color: #ccc;
+  color: #a5a5a5;
 }
 .token.function {
   color: #f08d49;

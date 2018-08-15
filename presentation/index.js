@@ -50,7 +50,8 @@ const theme = createTheme(
     grayBg: "#37474F",
     whitesmoke: "whitesmoke",
     dark: "#111",
-    codeBg: "#2a2734"
+    codeBg: "#2a2734",
+    codeSlideBg: "#122b45"
   },
   {
     primary: "Montserrat",
@@ -166,7 +167,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <CodeSlide
           theme={theme}
-          bgColor="codeBg"
+          bgColor="codeSlideBg"
           transition={[]}
           lang="js"
           code={require("raw-loader!../assets/code/firstReact.example")}
@@ -286,7 +287,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <CodeSlide
           theme={theme}
-          bgColor="tertiary"
+          bgColor="codeSlideBg"
           transition={[]}
           lang="jsx"
           code={require("raw-loader!../assets/code/errorBoundary.example")}
