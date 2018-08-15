@@ -380,6 +380,7 @@ export default class Presentation extends React.Component {
             }
           ]}
         />
+        {/* Create ref */}
         <Slide transition={["zoom"]} bgColor="tertiary" textColor="primary">
           <Heading size={4} textColor="primary">
             createRef/ForwardRef
@@ -404,9 +405,6 @@ export default class Presentation extends React.Component {
                 </Link>
               </ListItem>
             </Appear>
-            {/* <Appear>
-              <ListItem>Como usar?</ListItem>
-            </Appear> */}
           </List>
         </Slide>
         <Slide transition={["slide"]} bgColor="codeBg">
@@ -419,6 +417,7 @@ export default class Presentation extends React.Component {
             source={require("raw-loader!../assets/code/createRef.example")}
           />
         </Slide>
+        {/* FowardRef */}
         <Slide transition={["spin"]} bgColor="primary" textColor="dark">
           <Heading size={4} textColor="tertiary">
             forwardRef
@@ -440,6 +439,19 @@ export default class Presentation extends React.Component {
         <Slide transition={["spin"]} bgColor="tertiary" textColor="dark">
           <iframe
             src="https://codesandbox.io/embed/xp8om4l17o"
+            style={codesandboxStyle}
+            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+          />
+        </Slide>
+        {/* Ciclos de vida */}
+        <Slide transition={["spin"]} bgColor="tertiary" textColor="dark">
+          <Heading size={4} textColor="tertiary">
+            Ciclos de vida
+          </Heading>
+        </Slide>
+        <Slide transition={["spin"]} bgColor="tertiary" textColor="dark">
+          <iframe
+            src="https://codesandbox.io/embed/z3pxwy4yz4"
             style={codesandboxStyle}
             sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
           />
