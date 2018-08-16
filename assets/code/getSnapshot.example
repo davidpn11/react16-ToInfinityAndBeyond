@@ -1,0 +1,21 @@
+class List extends Component {
+
+  [...]
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    if (prevProps.messages.length < this.props.messages.length) {
+      const messages = this.listRef.current;
+      return messages.scrollHeight - messages.scrollTop;
+    }
+    return null;
+  }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (snapshot !== null) {
+      const messages = this.listRef.current;
+      messages.scrollTop = messages.scrollHeight - snapshot;
+    }
+  }
+
+  [...]
+
+}

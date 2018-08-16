@@ -34,8 +34,13 @@ const images = {
   githubLogo: require("../assets/github.svg"),
   blinking: require("../assets/blinking.gif"),
   oh: require("../assets/oh.gif"),
+  nooo: require("../assets/nooo.gif"),
+  cant_believe: require("../assets/cant_believe.gif"),
+  fine: require("../assets/fine.gif"),
   reactSize: require("../assets/reactSize.png"),
-  portalDiagram: require("../assets/portal-diagram.svg")
+  portalDiagram: require("../assets/portal-diagram.svg"),
+  lifecycleOld: require("../assets/lifecycle_old.png"),
+  lifecycleNew: require("../assets/lifecycle_new.png")
 };
 
 const codesandboxStyle = {
@@ -322,7 +327,6 @@ export default class Presentation extends React.Component {
           </Heading>
           <Image width="40%" src={images.portalDiagram} />
         </Slide>
-
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <Heading size={5} textColor="primary" caps>
             Para que serve?
@@ -444,10 +448,64 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         {/* Ciclos de vida */}
-        <Slide transition={["spin"]} bgColor="tertiary" textColor="dark">
-          <Heading size={4} textColor="tertiary">
+        <Slide transition={["spin"]} bgColor="primary" textColor="dark">
+          <Heading size={2} textColor="dark">
             Ciclos de vida
           </Heading>
+        </Slide>
+        <Slide transition={["spin"]} bgColor="primary" textColor="dark">
+          <Heading size={4} textColor="red">
+            Antigo
+          </Heading>
+          <Image width="100%" src={images.lifecycleOld} />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="dark">
+          <List>
+            <ListItem>Ciclo de vida bem declarativo</ListItem>
+            <Appear>
+              <ListItem>Mudou ao longo do tempo</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Várias maneiras de realizar uma tarefa</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Não é claro qual é a melhor</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="dark" textColor="primary">
+          <Heading size={4} textColor="red">
+            Remoção de alguns hooks
+          </Heading>
+          <Appear>
+            <List>
+              <ListItem>componentWillMount</ListItem>
+              <ListItem>componentWillReceiveProps</ListItem>
+              <ListItem>componentWillUpdate</ListItem>
+            </List>
+          </Appear>
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="dark" textColor="primary">
+          <Image width="100%" src={images.cant_believe} />
+        </Slide>
+        <Slide transition={["slide"]} bgColor="dark" textColor="primary">
+          <Image width="80%" src={images.fine} />
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="tertiary" textColor="dark">
+          <Heading size={4} textColor="primary">
+            Adição de 2 novas API's
+          </Heading>
+          <List>
+            <ListItem>getDerivedStateFromProps</ListItem>
+            <ListItem>getSnapshotBeforeUpdate</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="dark">
+          <Heading size={4} textColor="red">
+            Novo
+          </Heading>
+          <Image width="100%" src={images.lifecycleNew} />
         </Slide>
         <Slide transition={["spin"]} bgColor="tertiary" textColor="dark">
           <iframe
@@ -455,6 +513,39 @@ export default class Presentation extends React.Component {
             style={codesandboxStyle}
             sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
           />
+        </Slide>
+        <Slide transition={["spin"]} bgColor="codeBg">
+          <CodePane
+            style={{ fontSize: "18px" }}
+            lang="jsx"
+            source={require("raw-loader!../assets/code/getSnapshot.example")}
+          />
+        </Slide>
+        <Slide transition={["spin"]} bgColor="primary" textColor="dark">
+          <Heading size={4} textColor="tertiary">
+            getDerivedStateFromProps
+          </Heading>
+          <Appear>
+            <Image width="80%" src={images.nooo} />
+          </Appear>
+        </Slide>
+        <Slide transition={["spin"]} bgColor="primary" textColor="dark">
+          <Heading size={4} textColor="tertiary">
+            getDerivedStateFromProps
+          </Heading>
+          <Text textColor="dark">
+            Usado apenas em casos raros -{" "}
+            <Link href="https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#when-to-use-derived-state">
+              Veja aqui
+            </Link>
+          </Text>
+          <Appear>
+            <CodePane
+              style={{ fontSize: "18px" }}
+              lang="jsx"
+              source={require("raw-loader!../assets/code/getDerivedState.example")}
+            />
+          </Appear>
         </Slide>
       </Deck>
     );

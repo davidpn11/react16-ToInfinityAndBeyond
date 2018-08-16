@@ -1,0 +1,7 @@
+static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.userName !== prevState.userName) {
+        return { ...nextProps }
+    } else {
+        return null
+    }
+}
