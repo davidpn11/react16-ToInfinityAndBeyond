@@ -610,6 +610,30 @@ export default class Presentation extends React.Component {
             source={require("raw-loader!../assets/code/contextConsumer.example")}
           />
         </Slide>
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={4} textColor="tertiary" caps>
+            Considerações
+          </Heading>
+          <List>
+            <ListItem>
+              Na mudança do valor, todos os filhos de Consumer serão
+              renderizados
+            </ListItem>
+            <ListItem style={{ marginTop: "20px" }}>
+              O mau uso afeta performance
+            </ListItem>
+            <ListItem style={{ marginTop: "20px" }}>
+              Se a idéia é só injetar props, considere{" "}
+              <Link href="https://reactjs.org/docs/composition-vs-inheritance.html">
+                composição de componentes
+              </Link>
+            </ListItem>
+            <ListItem style={{ marginTop: "20px" }}>
+              Considere quando precisa um estado global da aplicação, não um
+              substitudo de Redux/MobX{" "}
+            </ListItem>
+          </List>
+        </Slide>
         {/* <CodeSlide
           theme={theme}
           bgColor="codeSlideBg"
