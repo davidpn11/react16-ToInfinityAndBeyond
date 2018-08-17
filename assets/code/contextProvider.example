@@ -1,0 +1,30 @@
+import React, { Component } from "react";
+
+export const ThemeContext =
+    React.createContext('dark');
+
+class App extends Component {
+
+  constructor(props) {
+      this.state = { theme: 'dark' };
+  }
+
+  changeTheme =
+    theme => this.setState({ theme });
+
+  render() {
+    const { theme } = this.state;
+    const context = {
+      theme: theme,
+      changeTheme: this.changeTheme
+    };
+    return (
+      <ThemeContext.Provider value={context}>
+        <div>
+          <AppBar />
+          <FAB />
+        </div>
+      </ThemeContext.Provider>
+    );
+  }
+}

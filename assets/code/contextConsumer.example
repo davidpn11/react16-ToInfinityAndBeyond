@@ -1,0 +1,35 @@
+import React from "react";
+import { ThemeContext } from "./index";
+
+fuction AppBar() {
+    return (
+      <ThemeContext.Consumer>
+        {context => (
+          <Bar theme={context.theme}>
+            <button
+                onClick={() =>
+                    context
+                    .changeTheme("dark")}
+                className={
+                    context.theme === "dark"
+                    ? "active"
+                    : ""}
+            >
+              Dark
+            </button>
+            <button
+              onClick={() =>
+                context
+                .changeTheme("light")}
+                className={
+                    context.theme === "light"
+                    ? "active"
+                    : ""}
+            >
+              Light
+            </button>
+          </Bar>
+        )}
+      </ThemeContext.Consumer>
+    );
+}

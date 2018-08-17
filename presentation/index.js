@@ -547,6 +547,120 @@ export default class Presentation extends React.Component {
             />
           </Appear>
         </Slide>
+        <Slide transition={["spin"]} bgColor="tertiary" textColor="dark">
+          <Heading size={4} textColor="primary" caps>
+            Context API
+          </Heading>
+        </Slide>
+        <Slide transition={["spin"]} bgColor="white" textColor="dark">
+          <Heading size={4} textColor="tertiary" caps>
+            Context API
+          </Heading>
+          <List>
+            <ListItem>A antiga era muito experimental</ListItem>
+            <Appear>
+              <ListItem>Evita o prop drilling</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Use para definir um estado global da aplicação
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Autenticação de usuários, linguagem, tema, etc
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>API - Provider e Consumer</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <CodeSlide
+          theme={theme}
+          bgColor="codeSlideBg"
+          transition={[]}
+          lang="jsx"
+          code={require("raw-loader!../assets/code/contextProvider.example")}
+          ranges={[
+            { loc: [0, 50], title: "Context Provider" },
+            {
+              loc: [2, 4],
+              note: "Instancia o context com um valor padrão"
+            },
+            {
+              loc: [2, 4],
+              note:
+                "Veja que está exportando para ser usada nos componentes filhos"
+            },
+            { loc: [8, 9], note: "Seta o estado para o tema padrão" },
+            { loc: [15, 20], note: "Instancia o valor de context" },
+            { loc: [11, 14], note: "Método para mudar o tema" },
+            {
+              loc: [21, 27],
+              note:
+                "ThemeContext.Provider sendo o valor como a constante context"
+            }
+          ]}
+        />
+        <Slide transition={["spin"]} bgColor="codeBg">
+          <CodePane
+            style={{ fontSize: "18px" }}
+            lang="jsx"
+            source={require("raw-loader!../assets/code/contextConsumer.example")}
+          />
+        </Slide>
+        {/* <CodeSlide
+          theme={theme}
+          bgColor="codeSlideBg"
+          transition={[]}
+          lang="jsx"
+          style={{ fontSize: "10px!important" }}
+          code={require("raw-loader!../assets/code/contextConsumer.example")}
+          ranges={[
+            { loc: [0, 50], title: "Context Consumer" },
+            {
+              loc: [1, 2],
+              note: "importa o ThemeContext"
+            },
+            {
+              loc: [6, 35],
+              note: "Render prop!"
+            },
+            { loc: [8, 9], note: "Seta o estado para o tema padrão" },
+            { loc: [15, 20], note: "Instancia o valor de context" },
+            { loc: [11, 14], note: "Método para mudar o tema" },
+            {
+              loc: [21, 27],
+              note:
+                "ThemeContext.Provider sendo o valor como a constante context"
+            }
+          ]}
+        /> */}
+        <Slide transition={["spin"]} bgColor="tertiary" textColor="dark">
+          <iframe
+            src="https://codesandbox.io/embed/qzknxnjzrw"
+            style={codesandboxStyle}
+            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+          />
+        </Slide>
+        <Slide transition={["spin"]} bgColor="dark" textColor="primary">
+          <Heading size={4} textColor="primary" caps>
+            And Beyond!!!
+          </Heading>
+          <Image width="20%" src={images.infinty} />
+          <List textColor="primary">
+            <Appear>
+              <ListItem>React Fiber</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Async Rendering</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>React Suspense</ListItem>
+            </Appear>
+          </List>
+        </Slide>
       </Deck>
     );
   }
