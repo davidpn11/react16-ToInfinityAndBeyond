@@ -165,9 +165,6 @@ export default class Presentation extends React.Component {
               <ListItem>Baseado em componentes</ListItem>
             </Appear>
             <Appear>
-              <ListItem>Ciclo de vida bem detalhado</ListItem>
-            </Appear>
-            <Appear>
               <ListItem>Transferência de dados unidirecional (Flux)</ListItem>
             </Appear>
             <Appear>
@@ -483,7 +480,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["zoom"]} bgColor="dark" textColor="primary">
           <Heading size={4} textColor="red">
-            Remoção de alguns hooks
+            Remoção de algumas chamadas
           </Heading>
           <Appear>
             <List>
