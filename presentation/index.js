@@ -40,7 +40,14 @@ const images = {
   reactSize: require("../assets/reactSize.png"),
   portalDiagram: require("../assets/portal-diagram.svg"),
   lifecycleOld: require("../assets/lifecycle_old.png"),
-  lifecycleNew: require("../assets/lifecycle_new.png")
+  lifecycleNew: require("../assets/lifecycle_new.png"),
+  sync: require("../assets/sync.gif"),
+  async: require("../assets/async.gif"),
+  after: require("../assets/after.gif"),
+  suspense: require("../assets/suspense.gif"),
+  suspense2: require("../assets/suspense2.gif"),
+  haters: require("../assets/haters.gif"),
+  thanks: require("../assets/thanks.gif")
 };
 
 const codesandboxStyle = {
@@ -690,6 +697,282 @@ export default class Presentation extends React.Component {
               <ListItem textSize={40}>React Suspense</ListItem>
             </Appear>
           </List>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="tertiary" textColor="black">
+          <Heading size={4} textColor="primary" caps>
+            Como React funciona
+          </Heading>
+          <List textColor="primary" size={3}>
+            <Appear>
+              <ListItem>
+                Possui o DOM Virtual de acordo com a arvore de elementos
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Quando ocorre uma mudança, checa no DOM virtual para adicionar,
+                remover ou atualizar os elementos Reais
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Reconciliação</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="black">
+          <Heading size={4} textColor="tertiary" caps>
+            OK. Mas qual o problema?
+          </Heading>
+          <List>
+            <Appear>
+              <ListItem>Uma vez que ele começou, o render não para</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Pense em uma vida sem git</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>React Fiber ao resgate</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="black">
+          <Heading size={4} textColor="tertiary" caps>
+            React Fiber
+          </Heading>
+          <List>
+            <Appear>
+              <ListItem>
+                Permite que React pause e continue tarefas que mais importam
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Arquitetura interna do React inteiramente reconstruída
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Em um nível mais alto, trabalha com prioridades
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                O teclar de um usuário é mais importante que renderizar 100
+                componentes
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Precursor para as próximas funcionalidades que React quer
+                oferecer
+              </ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="dark" textColor="black">
+          <Heading size={4} textColor="white">
+            Síncrono
+          </Heading>
+          <Image width="100%" src={images.sync} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="dark" textColor="black">
+          <Heading size={4} textColor="white">
+            Assíncrono - Time Slicing
+          </Heading>
+          <Image width="100%" src={images.async} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="black">
+          <Heading size={4} textColor="tertiary" caps>
+            Porque isso é muito f*da?
+          </Heading>
+          <List>
+            <ListItem style={{ marginTop: "20px" }}>
+              Framework sabe priorizar tarefas
+            </ListItem>
+            <ListItem style={{ marginTop: "20px" }}>
+              A experiência do usuário não sofre
+            </ListItem>
+            <ListItem style={{ marginTop: "20px" }}>
+              Aplicação mais performática e flúida
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="codeBg" textColor="primary">
+          <Heading size={4} textColor="tertiary" caps>
+            React Suspense
+          </Heading>
+          <List>
+            <Appear>
+              <ListItem>Foca em IO</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Resumindo, prende a renderização até que uma condição é atingida
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Lembra um pouco uma Promise</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Se está carregando um conteúdo, mostra um spinner até carregar
+                os dados
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                <Image width="60%" src={images.after} />
+              </ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="codeBg" textColor="primary">
+          <Heading size={4} textColor="tertiary" caps>
+            Porque precisamos disso?
+          </Heading>
+          <List>
+            <Appear style={{ marginTop: "20px" }}>
+              <ListItem>
+                Não precisa implementar a tela de carregamento
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem style={{ marginTop: "20px" }}>
+                Pode evitar muitos spinners e conteúdo "pulando" na página
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem style={{ marginTop: "20px" }}>
+                Fica mais complicado com vários conteúdos ou condições
+                específicas
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem style={{ marginTop: "20px" }}>
+                Com o async mode vai ficar ainda mais complexo
+              </ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="dark" textColor="black">
+          <Heading size={4} textColor="white">
+            Suspense
+          </Heading>
+          <Image width="100%" src={images.suspense} />
+        </Slide>
+        <Slide transition={["spin"]} bgColor="dark" textColor="black">
+          <Heading size={4} textColor="white">
+            Suspense 2
+          </Heading>
+          <Image width="100%" src={images.suspense2} />
+        </Slide>
+        <Slide transition={["spin"]} bgColor="tertiary" textColor="black">
+          <Heading size={4} textColor="white">
+            E muito mais
+          </Heading>
+          <List>
+            <ListItem>Code Splitting</ListItem>
+            <ListItem style={{ marginTop: "20px" }}>
+              Condições de corrida
+            </ListItem>
+            <ListItem style={{ marginTop: "20px" }}>
+              Condições específicas
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["spin"]} bgColor="primary" textColor="black">
+          <Heading size={4} textColor="tertiary">
+            Porque React está mudando o jogo?
+          </Heading>
+          <List>
+            <Appear style={{ marginTop: "20px" }}>
+              <ListItem>Todo mundo quer o seu app voando</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem style={{ marginTop: "20px" }}>
+                Mas isso não é realidade pra todos
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem style={{ marginTop: "20px" }}>
+                No final das contas, o que conta é a experiência do usuário
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem style={{ marginTop: "20px" }}>
+                Os grandes problemas são CPU e IO
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem style={{ marginTop: "20px" }}>
+                E é ai que React vai ganhar a luta
+              </ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["spin"]} bgColor="dark" textColor="black">
+          <Heading size={4} textColor="primary">
+            ¯\_(ツ)_/¯
+          </Heading>
+          <Image width="100%" src={images.haters} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="black">
+          <Heading size={4} textColor="tertiary">
+            Obrigado, galera!
+          </Heading>
+          <Image width="60%" src={images.thanks} />
+        </Slide>
+        <Slide transition={["spin"]} bgColor="primary" textColor="black">
+          <Heading size={2} textColor="tertiary">
+            Talks
+          </Heading>
+          <Text textColor="dark" textSize={30} style={{ marginTop: "20px" }}>
+            Beyond React 16 - Dan Abramov -
+            <Link href="https://www.youtube.com/watch?v=v6iR3Zk4oDY">
+              {" "}
+              Link
+            </Link>
+          </Text>
+          <Text textColor="dark" textSize={30} style={{ marginTop: "20px" }}>
+            React Suspense - Andrew Clark -
+            <Link href="https://www.youtube.com/watch?v=z-6JC0_cOns">
+              {" "}
+              Link
+            </Link>
+          </Text>
+        </Slide>
+        <Slide transition={["spin"]} bgColor="primary" textColor="black">
+          <Heading size={2} textColor="tertiary">
+            Curiosidades
+          </Heading>
+          <Text textColor="dark" textSize={30} style={{ marginTop: "20px" }}>
+            Palestra feita em React ❤ -
+            <Link href="https://formidable.com/open-source/spectacle/docs/getting-started/">
+              Spectacle
+            </Link>
+          </Text>
+          <Text textColor="dark" textSize={30} style={{ marginTop: "20px" }}>
+            <Link href="https://github.com/jamiebuilds/spectacle-code-slide">
+              Spectacle Code Slide
+            </Link>
+          </Text>
+          <Text textColor="dark" textSize={30} style={{ marginTop: "30px" }}>
+            http://react-infinity-and-beyond.surge.sh/
+          </Text>
+          <Text textColor="dark" textSize={30} style={{ marginTop: "40px" }}>
+            <Image width="10%" src={images.twitterLogo} />{" "}
+            <Link href="https://twitter.com/11Davidpn">@David11</Link>
+          </Text>
+        </Slide>
+        <Slide transition={["spin"]} bgColor="dark" textColor="black">
+          <Heading size={2} textColor="tertiary">
+            Perguntas?
+          </Heading>
+        </Slide>
+        <Slide transition={["spin"]} bgColor="primary" textColor="black">
+          <Heading size={2} textColor="dark">
+            Obrigado ❤
+          </Heading>
         </Slide>
       </Deck>
     );
