@@ -534,7 +534,7 @@ export default class Presentation extends React.Component {
             getDerivedStateFromProps
           </Heading>
           <Text textColor="dark">
-            Usado apenas em casos raros -{" "}
+            Usado apenas em casos raros -
             <Link href="https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#when-to-use-derived-state">
               Veja aqui
             </Link>
@@ -616,6 +616,12 @@ export default class Presentation extends React.Component {
           </Heading>
           <List>
             <ListItem>
+              Usa o padrão
+              <Link href="https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce">
+                Render prop
+              </Link>
+            </ListItem>
+            <ListItem>
               Na mudança do valor, todos os filhos de Consumer serão
               renderizados
             </ListItem>
@@ -623,14 +629,14 @@ export default class Presentation extends React.Component {
               O mau uso afeta performance
             </ListItem>
             <ListItem style={{ marginTop: "20px" }}>
-              Se a idéia é só injetar props, considere{" "}
+              Se a idéia é só injetar props, considere
               <Link href="https://reactjs.org/docs/composition-vs-inheritance.html">
                 composição de componentes
               </Link>
             </ListItem>
             <ListItem style={{ marginTop: "20px" }}>
               Considere quando precisa um estado global da aplicação, não um
-              substitudo de Redux/MobX{" "}
+              substitudo de Redux/MobX
             </ListItem>
           </List>
         </Slide>
@@ -672,16 +678,16 @@ export default class Presentation extends React.Component {
           <Heading size={4} textColor="primary" caps>
             And Beyond!!!
           </Heading>
-          <Image width="20%" src={images.infinty} />
-          <List textColor="primary">
+          <Image width="40%" src={images.infinty} />
+          <List textColor="primary" size={3}>
             <Appear>
-              <ListItem>React Fiber</ListItem>
+              <ListItem textSize={40}>React Fiber</ListItem>
             </Appear>
             <Appear>
-              <ListItem>Async Rendering</ListItem>
+              <ListItem textSize={40}>Async Rendering</ListItem>
             </Appear>
             <Appear>
-              <ListItem>React Suspense</ListItem>
+              <ListItem textSize={40}>React Suspense</ListItem>
             </Appear>
           </List>
         </Slide>
