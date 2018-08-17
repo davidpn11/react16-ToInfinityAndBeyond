@@ -165,12 +165,12 @@ export default class Presentation extends React.Component {
               <ListItem>Baseado em componentes</ListItem>
             </Appear>
             <Appear>
-              <ListItem>Transferência de dados unidirecional (Flux)</ListItem>
-            </Appear>
-            <Appear>
               <ListItem>
                 State (dados próprios) e Props(dados recebidos)
               </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Transferência de dados unidirecional (Flux)</ListItem>
             </Appear>
           </List>
         </Slide>
