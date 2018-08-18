@@ -381,7 +381,7 @@ export default class Presentation extends React.Component {
               </ListItem>
             </Appear>
             <Appear>
-              <ListItem>O dev faz o resto</ListItem>
+              <ListItem>O dev faz o resto - Ref</ListItem>
             </Appear>
             <Appear>
               <ListItem>
@@ -772,7 +772,9 @@ export default class Presentation extends React.Component {
             Porque precisamos disso?
           </Heading>
           <List>
-            <ListItem>Não precisa implementar a tela de carregamento</ListItem>
+            <ListItem>
+              Não precisa implementar a tela e lógica de carregamento
+            </ListItem>
             <ListItem style={{ marginTop: "20px" }}>
               Pode evitar muitos spinners e conteúdo "pulando" na página
             </ListItem>
