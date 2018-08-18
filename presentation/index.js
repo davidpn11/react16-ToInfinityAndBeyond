@@ -319,7 +319,7 @@ export default class Presentation extends React.Component {
           <List>
             <ListItem>Modais</ListItem>
             <ListItem>Tooltips</ListItem>
-            <ListItem>Caixas de dialogos</ListItem>
+            <ListItem>Caixas de diálogos</ListItem>
             <ListItem>
               Qualquer coisa que precisa ficar por cima de um <i>overflow</i>
             </ListItem>
@@ -659,7 +659,7 @@ export default class Presentation extends React.Component {
           </Heading>
           <List textColor="primary" size={3}>
             <ListItem>
-              Possui o DOM Virtual de acordo com a arvore de elementos
+              Possui o DOM Virtual de acordo com a árvore de elementos
             </ListItem>
             <ListItem>
               Quando ocorre uma mudança, checa no DOM virtual para adicionar,
