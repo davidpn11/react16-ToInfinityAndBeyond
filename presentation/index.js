@@ -823,6 +823,11 @@ export default class Presentation extends React.Component {
             Porque React está mudando o jogo?
           </Heading>
           <List>
+            <Appear>
+              <ListItem style={{ marginTop: "20px" }}>
+                Os grandes problemas são CPU e IO
+              </ListItem>
+            </Appear>
             <Appear style={{ marginTop: "20px" }}>
               <ListItem>Todo mundo quer o seu app voando</ListItem>
             </Appear>
@@ -834,11 +839,6 @@ export default class Presentation extends React.Component {
             <Appear>
               <ListItem style={{ marginTop: "20px" }}>
                 No final das contas, o que conta é a experiência do usuário
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem style={{ marginTop: "20px" }}>
-                Os grandes problemas são CPU e IO
               </ListItem>
             </Appear>
             <Appear>
@@ -880,15 +880,12 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
         <Slide transition={["spin"]} bgColor="primary" textColor="black">
-          <Heading size={2} textColor="tertiary">
-            Curiosidades
-          </Heading>
-          <Text textColor="dark" textSize={30} style={{ marginTop: "20px" }}>
+          <Heading size={4} textColor="tertiary">
             Palestra feita em React ❤ -
             <Link href="https://formidable.com/open-source/spectacle/docs/getting-started/">
               Spectacle
             </Link>
-          </Text>
+          </Heading>
           <Text textColor="dark" textSize={30} style={{ marginTop: "20px" }}>
             <Link href="https://github.com/jamiebuilds/spectacle-code-slide">
               Spectacle Code Slide
