@@ -46,6 +46,7 @@ const images = {
   after: require("../assets/after.gif"),
   suspense: require("../assets/suspense.gif"),
   suspense2: require("../assets/suspense2.gif"),
+  suspense3: require("../assets/suspense3.gif"),
   haters: require("../assets/haters.gif"),
   thanks: require("../assets/thanks.gif")
 };
@@ -97,7 +98,7 @@ export default class Presentation extends React.Component {
           >
             React 16
           </Heading>
-          <Text size={2} textColor="gray">
+          <Text size={2} textColor="primary">
             Ao infinito e além
           </Text>
           <Image width="20%" src={images.infinty} />
@@ -158,20 +159,10 @@ export default class Presentation extends React.Component {
             React é:
           </Heading>
           <List>
-            <Appear>
-              <ListItem>Framework JS</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>Baseado em componentes</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>
-                State (dados próprios) e Props(dados recebidos)
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>Transferência de dados unidirecional (Flux)</ListItem>
-            </Appear>
+            <ListItem>Framework JS</ListItem>
+            <ListItem>Baseado em componentes</ListItem>
+            <ListItem>State (dados próprios) e Props(dados recebidos)</ListItem>
+            <ListItem>Transferência de dados unidirecional (Flux)</ListItem>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
@@ -202,8 +193,8 @@ export default class Presentation extends React.Component {
             { loc: [39, 40], note: "render do App" },
             { loc: [32, 33], note: "Uso do count" },
             { loc: [33, 34], note: "Usando List" },
-            { loc: [13, 18], note: "componentDidMount" },
             { loc: [2, 3], note: "importando List" },
+            { loc: [13, 18], note: "componentDidMount" },
             { loc: [33, 34], note: "Usando List" },
             { loc: [0, 50], title: "É isso" }
           ]}
@@ -264,9 +255,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["spin"]} bgColor="tertiary">
           <Heading size={4} textColor="dark" caps>
             Melhor tratamento de erros
-            <Appear>
-              <Text textColor="red">ANTES</Text>
-            </Appear>
+            <Text textColor="red">ANTES</Text>
           </Heading>
           <Appear>
             <Text textColor="dark">
@@ -282,18 +271,10 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <List>
-            <Appear>
-              <ListItem>Introduzindo Error boundaries</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>componentDidCatch(error, info)</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>Mostra uma outra UI quando da error</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>Como usar?</ListItem>
-            </Appear>
+            <ListItem>Introduzindo Error boundaries</ListItem>
+            <ListItem>componentDidCatch(error, info)</ListItem>
+            <ListItem>Mostra uma outra UI quando da error</ListItem>
+            <ListItem>Como usar?</ListItem>
           </List>
           <Appear>
             <CodePane
@@ -431,17 +412,11 @@ export default class Presentation extends React.Component {
             forwardRef
           </Heading>
           <List>
-            <Appear>
-              <ListItem>
-                Possibilita acessar um elemento a partir de outro componente
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>Ex: foco, seleção, animações, etc.</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>Diferente de props</ListItem>
-            </Appear>
+            <ListItem>
+              Possibilita acessar um elemento a partir de outro componente
+            </ListItem>
+            <ListItem>Ex: foco, seleção, animações, etc.</ListItem>
+            <ListItem>Diferente de props</ListItem>
           </List>
         </Slide>
         <Slide transition={["spin"]} bgColor="tertiary" textColor="dark">
@@ -467,15 +442,9 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="tertiary" textColor="dark">
           <List>
             <ListItem>Ciclo de vida bem declarativo</ListItem>
-            <Appear>
-              <ListItem>Mudou ao longo do tempo</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>Várias maneiras de realizar uma tarefa</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>Não é claro qual é a melhor</ListItem>
-            </Appear>
+            <ListItem>Mudou ao longo do tempo</ListItem>
+            <ListItem>Várias maneiras de realizar uma tarefa</ListItem>
+            <ListItem>Não é claro qual é a melhor</ListItem>
           </List>
         </Slide>
         <Slide transition={["zoom"]} bgColor="dark" textColor="primary">
@@ -562,22 +531,10 @@ export default class Presentation extends React.Component {
           </Heading>
           <List>
             <ListItem>A antiga era muito experimental</ListItem>
-            <Appear>
-              <ListItem>Evita o prop drilling</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>
-                Use para definir um estado global da aplicação
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>
-                Autenticação de usuários, linguagem, tema, etc
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>API - Provider e Consumer</ListItem>
-            </Appear>
+            <ListItem>Evita o prop drilling</ListItem>
+            <ListItem>Use para definir um estado global da aplicação</ListItem>
+            <ListItem>Autenticação de usuários, linguagem, tema, etc</ListItem>
+            <ListItem>API - Provider e Consumer</ListItem>
           </List>
         </Slide>
         <CodeSlide
@@ -614,14 +571,22 @@ export default class Presentation extends React.Component {
             source={require("raw-loader!../assets/code/contextConsumer.example")}
           />
         </Slide>
+        <Slide transition={["spin"]} bgColor="tertiary" textColor="dark">
+          <iframe
+            src="https://codesandbox.io/embed/qzknxnjzrw"
+            style={codesandboxStyle}
+            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+          />
+        </Slide>
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={4} textColor="tertiary" caps>
             Considerações
           </Heading>
           <List>
             <ListItem>
-              Usa o padrão
+              Usa o padrão{" "}
               <Link href="https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce">
+                {" "}
                 Render prop
               </Link>
             </ListItem>
@@ -633,7 +598,7 @@ export default class Presentation extends React.Component {
               O mau uso afeta performance
             </ListItem>
             <ListItem style={{ marginTop: "20px" }}>
-              Se a idéia é só injetar props, considere
+              Se a idéia é só injetar props, considere{" "}
               <Link href="https://reactjs.org/docs/composition-vs-inheritance.html">
                 composição de componentes
               </Link>
@@ -671,13 +636,6 @@ export default class Presentation extends React.Component {
             }
           ]}
         /> */}
-        <Slide transition={["spin"]} bgColor="tertiary" textColor="dark">
-          <iframe
-            src="https://codesandbox.io/embed/qzknxnjzrw"
-            style={codesandboxStyle}
-            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-          />
-        </Slide>
         <Slide transition={["spin"]} bgColor="dark" textColor="primary">
           <Heading size={4} textColor="primary" caps>
             And Beyond!!!
@@ -700,17 +658,13 @@ export default class Presentation extends React.Component {
             Como React funciona
           </Heading>
           <List textColor="primary" size={3}>
-            <Appear>
-              <ListItem>
-                Possui o DOM Virtual de acordo com a arvore de elementos
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>
-                Quando ocorre uma mudança, checa no DOM virtual para adicionar,
-                remover ou atualizar os elementos Reais
-              </ListItem>
-            </Appear>
+            <ListItem>
+              Possui o DOM Virtual de acordo com a arvore de elementos
+            </ListItem>
+            <ListItem>
+              Quando ocorre uma mudança, checa no DOM virtual para adicionar,
+              remover ou atualizar os elementos Reais
+            </ListItem>
             <Appear>
               <ListItem>Reconciliação</ListItem>
             </Appear>
@@ -721,6 +675,9 @@ export default class Presentation extends React.Component {
             OK. Mas qual o problema?
           </Heading>
           <List>
+            <Appear>
+              <ListItem>Serial</ListItem>
+            </Appear>
             <Appear>
               <ListItem>Uma vez que ele começou, o render não para</ListItem>
             </Appear>
@@ -737,33 +694,20 @@ export default class Presentation extends React.Component {
             React Fiber
           </Heading>
           <List>
-            <Appear>
-              <ListItem>
-                Permite que React pause e continue tarefas que mais importam
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>
-                Arquitetura interna do React inteiramente reconstruída
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>
-                Em um nível mais alto, trabalha com prioridades
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>
-                O teclar de um usuário é mais importante que renderizar 100
-                componentes
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>
-                Precursor para as próximas funcionalidades que React quer
-                oferecer
-              </ListItem>
-            </Appear>
+            <ListItem>
+              Arquitetura interna do React inteiramente reconstruída
+            </ListItem>
+            <ListItem>
+              Permite que React pause e continue tarefas que mais importam
+            </ListItem>
+            <ListItem>Em um nível mais alto, trabalha com prioridades</ListItem>
+            <ListItem>
+              O teclar de um usuário é mais importante que renderizar 100
+              componentes
+            </ListItem>
+            <ListItem>
+              Precursor para as próximas funcionalidades que React quer oferecer
+            </ListItem>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="dark" textColor="black">
@@ -828,27 +772,16 @@ export default class Presentation extends React.Component {
             Porque precisamos disso?
           </Heading>
           <List>
-            <Appear style={{ marginTop: "20px" }}>
-              <ListItem>
-                Não precisa implementar a tela de carregamento
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem style={{ marginTop: "20px" }}>
-                Pode evitar muitos spinners e conteúdo "pulando" na página
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem style={{ marginTop: "20px" }}>
-                Fica mais complicado com vários conteúdos ou condições
-                específicas
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem style={{ marginTop: "20px" }}>
-                Com o async mode vai ficar ainda mais complexo
-              </ListItem>
-            </Appear>
+            <ListItem>Não precisa implementar a tela de carregamento</ListItem>
+            <ListItem style={{ marginTop: "20px" }}>
+              Pode evitar muitos spinners e conteúdo "pulando" na página
+            </ListItem>
+            <ListItem style={{ marginTop: "20px" }}>
+              Fica mais complicado com vários conteúdos ou condições específicas
+            </ListItem>
+            <ListItem style={{ marginTop: "20px" }}>
+              Com o async mode vai ficar ainda mais complexo
+            </ListItem>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="dark" textColor="black">
@@ -862,6 +795,12 @@ export default class Presentation extends React.Component {
             Suspense 2
           </Heading>
           <Image width="100%" src={images.suspense2} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="dark" textColor="black">
+          <Heading size={4} textColor="white">
+            Suspense 3
+          </Heading>
+          <Image width="100%" src={images.suspense3} />
         </Slide>
         <Slide transition={["spin"]} bgColor="tertiary" textColor="black">
           <Heading size={4} textColor="white">
@@ -958,7 +897,7 @@ export default class Presentation extends React.Component {
           </Text>
           <Text textColor="dark" textSize={30} style={{ marginTop: "40px" }}>
             <Image width="10%" src={images.twitterLogo} />{" "}
-            <Link href="https://twitter.com/11Davidpn">@David11</Link>
+            <Link href="https://twitter.com/11Davidpn">@11Davidpn</Link>
           </Text>
         </Slide>
         <Slide transition={["spin"]} bgColor="dark" textColor="black">
